@@ -1,0 +1,4593 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+      
+}
+
+img {
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #222328;
+    display: block;
+}
+#container {
+    width: 100%;
+/*    height: 0px;*/
+/*    margin: 0 auto;*/
+/*    display: block;*/
+/*    border: 1px solid black;*/
+}
+#header_m {
+    display: none;
+}
+#header_pc {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+ 
+}
+#header_pc:hover{
+    transition: 1s;
+}
+#logo img{
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    z-index: 10;
+}
+.m_nav {
+    display: none;
+}
+/* *********** main logo ani *************** */
+.inputSvg {
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    z-index: 10;
+    transform-origin: left top;
+    animation: moveTop .5s linear 4s forwards;
+}
+@keyframes moveTop {
+    0% {
+        top: 25%;
+        left: 48%;
+    }
+    100% {
+        top:-3%;
+        left: -5%;
+        transform: scale(0);
+    }
+
+}
+.svgT1{
+		
+    stroke-miterlimit:5;  
+    stroke-dasharray: 304;
+    animation: dash1 3s linear 1s forwards;
+}
+@keyframes dash1 {
+0% {
+    fill: none;
+    stroke:#000000;
+    stroke-dashoffset: 304;
+}
+50% {
+    stroke-dashoffset: 0;
+}
+80% {
+    fill: #4BB749;
+}
+100% {
+    fill: #4BB749;
+    stroke-miterlimit: 0;
+}
+
+}
+.svgC1{
+    stroke-miterlimit:5;
+    stroke-dasharray: 47;
+    /* stroke-dashoffset: 47; */
+    animation: dash2 1s linear forwards;
+}
+@keyframes dash2 {
+  0% {
+    stroke:#000000;
+    stroke-dashoffset: 47;
+}
+  50% {
+    stroke-dashoffset: 0;
+}
+80% {
+    fill: #4BB749;
+}
+  100% {
+    fill: #4BB749;
+    stroke-miterlimit: 0;
+  }
+}
+.svgT2{
+    stroke-miterlimit:5;  
+    stroke-dasharray: 304;
+    animation: dash3 3s linear 1s forwards;
+}
+@keyframes dash3 {
+  0% {
+    fill: none;
+    stroke:#000000;
+    stroke-dashoffset: 304;
+}
+  50% {
+    stroke-dashoffset: 0;
+}
+80% {
+    fill: #218CCC;
+}
+  100% {
+    fill: #218CCC;
+    stroke-miterlimit: 0;
+  }
+}
+.svgC2{
+    stroke-miterlimit:5;  
+    stroke-dasharray: 47;
+    animation: dash4 1s linear forwards;
+}
+@keyframes dash4 {
+0% {
+    stroke:#000000;
+    stroke-dashoffset: 47;
+}
+50% {
+    stroke-dashoffset:0;
+}
+80% {
+    fill: #218CCC;
+}
+100% {
+    fill: #218CCC;
+    stroke-miterlimit: 0;}
+}
+.svgT1,.svgC1,.svgT2,.svgC2 {
+    fill: none;
+}
+
+/****************** Scroll Bar ******************/
+.roll_bar {
+    width: 60px;
+    height: 200px;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    z-index: 999999;
+}
+.roll_bar>p{
+    color: #fff;
+    font-size: .8em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 2pt;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+}
+#scroll_btn {
+    width: 35px;
+    height: 100px;
+/*        background: skyblue;*/
+    position: relative;
+    top: 0;
+    margin: 5px auto;
+    padding-top: 10px;
+    border: 3px solid #fff;
+    border-radius: 40px;
+}
+#scroll_btn span, #scroll_btn::before, #scroll_btn::after {
+    content: "";
+    display: block;
+    background: #fff;
+    width: 80%;
+    height: 5px;
+/*    margin-bottom: 5px;*/
+    margin: 5px auto;
+    animation-duration: 1.6s;
+    animation-name: scrolBar;
+    animation-iteration-count: infinite;
+}
+#scroll_btn.on span, #scroll_btn.on::before, #scroll_btn.on::after {
+    background: #222328;
+}
+@keyframes scrolBar {0%{margin-top: 0%;}100%{margin-top: 70%;}}
+
+#fp-nav {
+    top: 80%;
+}
+.fp-slidesNav {
+    left: 50%;
+}
+
+/****************** HEADER MENU Bar ******************/
+.menu_bar {
+/*    width: 100%*/
+    position: absolute;
+    top: 0;
+    left: 49%;
+    z-index: 1;
+}
+.menu_bar>div>p>span{
+    color: #fff;
+    font-size: .8em;
+    font-weight: bold;
+    letter-spacing: 2pt;
+    position: relative;
+    top: -70%;
+    left: 26%;
+    animation-duration: 1s;
+    animation-name: menuBar;
+    animation-iteration-count: infinite;
+}
+
+#menu_btn {
+    width: 100px;
+    height: 35px;
+    position: relative;
+    top: 0;
+    margin: 5px auto;
+    padding-top: 10px;
+    border: 3px solid #fff;
+    border-radius: 40px;
+    
+}
+@keyframes menuBar {
+    0% {
+        top: -70%;
+    } 
+    100% {
+        top: 5%;
+    }
+}
+
+.slide_title_pc {
+    background: #cfd8dc;
+    border-bottom: 1px solid #cccc;
+    box-shadow: 0 2px 5px #666;
+    height: 170px;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+/*    z-index: 1;*/
+    display: none;
+}
+
+.p_nav {
+    width: 65%;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    display: none;
+}
+.p_nav>ul {
+    display: flex;
+    
+/*    z-index: 10;*/
+}
+
+.p_nav>ul>li>a {
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+/*    border-left: 3px solid rgba(0,0,0,0);*/
+    
+}
+.p_nav>ul>li>a:hover {
+    border-left: 3px solid aqua;
+    background: #e1e1e1;
+    color: #333;
+}
+
+
+.p_nav>ul>li {
+    flex: 1;
+    border-left: 1px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+
+
+.p_nav>ul>li:hover ul{
+    display: block;
+    
+}
+.p_nav>ul>li>ul>li {
+    width: 100%;
+    border-left: 3px solid rgba(0,0,0,0);
+    background: #cfd8dc;
+}
+.p_nav>ul>li>ul>li:hover {
+    border-left: 3px solid red;
+/*    background: yellowgreen;*/
+    background: #e1e1e1;
+}
+.p_nav>ul>li>ul>li>a {
+    width: 95%;
+    margin: 15px auto;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+/*    border: 1px solid red;*/
+    
+}
+/*
+.slide_title {
+    height: 180px;
+    background: #e1e1e1;
+}
+*/
+/********** slide 네비게이션 ***********/
+/*
+#fp-nav ul li a span {
+    background-color: #fff;
+}
+*/
+#deodorizer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+} 
+section {
+    margin: 0 auto;
+    display: block;
+}
+
+.main_bakimg2 div {
+    /* position: fixed; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    background: url(../images/full_section_10.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.main_bakimg3 img,.main_bakimg1 img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.main_bakimg4 div {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url(../images/full_section_14.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+video {
+    position: absolute;
+    /*        right: 0;*/
+    /*		bottom: 0;*/
+    top:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* background-attachment: fixed; */
+    
+}
+
+.slider_tj1 {
+    width: 100%;
+    display: block;
+    position: absolute;
+    overflow-y: hidden;
+    top: 40%;
+    display: none;
+}
+/* .slider_tj1 p {
+    width: 80%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: center;
+    line-height: 80px;
+    margin: 0 auto;
+    animation-duration: 8s;
+    animation-name: firstsP;
+    animation-iteration-count: infinite;
+} */
+/* .slider_tj1>div>p>span {
+    font-size: 2em;
+} */
+
+
+/* @keyframes firstsP {
+    from { transform: translateY(3em) }  애니메이션 높이 
+    to { transform: translateY(0) }
+} */
+/********************* main text ani ****************************/
+.text_ani_t1 {
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 2%;
+
+}
+.text_ani_t1 svg {
+    display: block;
+    margin: 0 auto;    
+}
+.text_ani_t1 path {
+    /* fill :none; */
+    stroke: #333; 
+    stroke-width: 3;
+}
+/************************************ OnGreen 2 ********************/
+.ongreen_m1 {
+    width: 85%;
+    margin: 0 50px 50px 30px;
+}
+.ongreen_m1 h1 {
+    color: #fff;
+}
+.ongreen_m1 p {
+    width: 80%;
+    font-size: 1.3em;
+    color: #fff;
+    margin: 20px 10px;
+}
+.ongreen_m1>p:nth-child(2) span {
+    font-size: 1.2em;
+    color: #75f41e;
+}
+.ongreen_m1>p:nth-child(3) span {
+    font-size: 1.1em;
+    color: #1451c2;
+}
+.ongreen_img {
+/*    width: 100%;*/
+    display: flex;
+    margin-top: 40px;
+}
+.ongreen_img div{
+    width: 85%;
+    margin: 0 auto;
+    
+}
+.ongreen_img>div>img{
+    width: 85%;
+    height: 70%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 20px;
+    border: 3px solid #fff;
+}
+.ongreen_img>div>img:hover {
+    /* opacity: 0.7; */
+    /* background: rgba(0,0,0,0.2); */
+    transition: .5s;
+    transform: scale(1.1);
+}
+.green_t1 {
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+}
+.green_p1 {
+    width: 85%;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+}
+
+/**************************** Ongreen Tech 2-2 ************************/
+.tech_vi {
+    position: absolute;
+    top: 20px;
+    margin-left: 17%;
+}
+.tech_vi>p {
+    width: 150px;
+    height: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    background: #76ffff;
+    border-radius: 20px;
+    padding-top: 4px;
+    box-shadow: 2px 2px 2px;
+}
+.ongreen_t1 {
+    width: 20%;
+    position: absolute;
+    top: 12%;
+    margin-left: 1.5%;
+}
+.ongreen_t1 h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.ongreen_mt img {
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+}
+.green_list {
+    width: 83%;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.green_list a {
+    width: 35%;
+    font-size: 1.4em;
+/*    border: 1px solid black;*/
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.green_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+
+.tech_sub {
+    display: none;
+}
+.green_b1 p{
+    width: 78%;
+    font-size: 1.2em;
+    line-height: 30px;
+}
+
+.green_b2,.green_b3 {
+    width: 70%;
+}
+.green_b4 {
+    width: 82%;
+    
+}
+.green_b4 div {
+    display: flex;
+}
+.green_b4>div>img {
+    padding: 5px;
+    margin: 10px auto;
+}
+/************************ Certificate  2-3 **************************/
+.certificate_t1 {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    margin-left: 1.5%;
+}
+.certificate_t1 div>img {
+    margin: 0 auto;
+}
+.certificate_t1 img {
+    width: 45%;
+    display: block;
+    padding: 10px;
+}
+.certificate_t1 h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+.certificate_list {
+    width: 83%;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.certificate_list a {
+    width: 42%;
+    font-size: 1.4em;
+/*    border: 1px solid black;*/
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.certificate_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+
+.certificate_b1>img {
+    width: 58%;
+    display: block;
+}
+.certificate_b3>img, .certificate_b4>img, .certificate_b5>img, .certificate_b6>img  {
+    width: 63%;
+}
+.certificate_b7>img {
+    width: 50%;
+    z-index: 5;
+}
+/**************** Ongreen Productmanagement  2-4 *******************/
+
+.quality_t1 {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    margin-left: 1.5%;
+}
+.quality_t1 h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+.quality_mt img {
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+}
+.quality_t1 div>img {
+    margin: 0 auto;
+}
+.quality_t1 img {
+    width: 45%;
+    display: block;
+    padding: 10px;
+}
+
+.quality_list {
+    width: 83%;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.quality_list a {
+    width: 42%;
+    font-size: 1.4em;
+/*    border: 1px solid black;*/
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.quality_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+
+.quality_b1>img {
+    width: 60%;
+}
+.quality_b2>img {
+    width: 55%;
+}
+.quality_b3>img, .quality_b4>img {
+    width: 75%;
+}
+
+/************************ OnGreen Patent 2-5 ***********************/
+.onPatent_t1 {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    margin-left: 1.5%;
+}
+.onPatent_t1 h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+.onPatent_mt img {
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+}
+.onPatent_t1 div>img {
+    margin: 0 auto;
+}
+.onPatent_t1 img {
+    width: 45%;
+    display: block;
+    padding: 10px;
+}
+.onPatent_list {
+    width: 83%;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.onPatent_list a {
+    width: 42%;
+    font-size: 1.4em;
+/*    border: 1px solid black;*/
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.onPatent_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+
+.onPatent_b1>img {
+    width: 70%;
+}
+
+/**************** Ssencat  3 *******************/
+
+.ssencat_t1 {
+    margin: 0 50px 100px 30px;
+}
+.ssencat_t1 h1 {
+    margin-bottom: 40px;
+}
+.ssencat_t1 p {
+    width: 80%;
+    font-size: 1.3em;
+    line-height: 40px;
+/*    margin: 10px;*/
+}
+.ssencat_t1>p:nth-child(2) span {
+    font-size: 1.2em;
+    color: #75f41e;
+}
+.ssencat_t1>p:nth-child(3) span {
+    font-size: 1.1em;
+    color: #1451c2;
+}
+.ssencat_img {
+/*    width: 100%;*/
+    display: flex;
+    margin-top: 40px;
+}
+.ssencat_img div{
+    width: 85%;
+    margin: 0 auto;
+    
+}
+.ssencat_img>div>div {
+    width: 85%;
+    height: 60%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: block;
+    border: 3px solid #fff;
+/*    object-fit: cover;*/
+}
+.ssencat_img img{
+    transform: scale(190%);
+}
+.ssencat_img img:hover {
+    opacity: 0.5;
+    transition: .5s;
+}
+.eng_3 img{
+    transform: scale(200%) translateY(20%);
+    
+}
+.cat_t1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 20px 0;
+}
+.cat_p1 {
+    width: 75%;
+    font-size: 1.2em;
+    margin: 0 auto;
+}
+
+/************************ SsencatTech   3-2 ******************************/
+.ssencat_vi {
+    position: absolute;
+    top: 20px;
+    margin-left: 17%;
+}
+.ssencat_vi>p {
+    width: 150px;
+    height: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    background: #76ffff;
+    box-shadow: 2px 2px 2px;
+    border-radius: 20px;
+    padding-top: 4px;
+}
+.ssencatTech_t1 {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    margin-left: 1.5%;
+}
+.ssencatTech_t1 h1 {
+    margin-bottom: 20px;
+}
+.ssencatTech_mt img {
+/*    width: 50%;*/
+    display: block;
+    margin: 10px auto;
+}
+.ssencatTech_t1 div>img {
+    margin: 0 auto;
+}
+.ssencatTech_t1 img {
+    width: 45%;
+    display: block;
+    padding: 10px;
+}
+.ssencatTech_list {
+    width: 83%;
+    border-top: 1px solid #a1a1a1;
+    border-bottom: 1px solid #a1a1a1;
+}
+.ssencatTech_list a {
+    width: 42%;
+    font-size: 1.2em;
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    box-shadow: 2px 2px 2px;
+    background: #92a7aa;
+}
+.ssencatTech_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+.ssencatTech_b1>p:nth-child(1){
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.ssencatTech_b1>p:nth-child(2){
+    font-size: 1em;
+    margin: 20px;
+}
+.ssencatTech_b1>p:nth-child(3){
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.ssencatTech_b1>div {
+    width: 85%;
+    display: flex;
+}
+.ssencatTech_b1>div>p {
+    width: 30%;
+}
+.ssencatTech_b1>div>img {
+    width: 30%;
+}
+.ssencatTech_b2>p {
+    width: 83%;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 5px 20px;
+    
+}
+.ssencatTech_b2>p:nth-child(3) {
+    border-top: 1px solid #a1a1a1;
+}
+.ssencatTech_b2>div>img {
+    width: 30%;
+    display: block;
+}
+.ssencatTech_b2>div {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+/*    margin: 10px auto;*/
+    justify-content: center;
+}
+.ssencatTech_b2>div>p {
+    width: 30%;
+    margin: 25px 20px;
+}
+.emg_p1,.emg_p2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.emg_p1>div {
+    margin: 5px 30px;
+}
+
+.ssencatTech_b4>div>div>p {
+    width: 35%;
+    height: 30px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background: rgba(73, 157, 7, 0.8);
+    margin: 10px auto;
+    padding: 2px 0 0 10px; 
+}
+.ssencatTech_b4>div>div>p:nth-child(3){
+    width: 50%;
+    height: auto;
+    background: none;
+}
+.ssencatTech_b4>div>div>img {
+    width: 52%;
+    margin-bottom: 2%;
+}
+
+/******************* Ssencat Certificates 3-3 ***************************/
+.ssencatCerti_t1 {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    margin-left: 1.5%;
+}
+.ssencatCerti_t1 h1 {
+    margin-bottom: 15px;
+}
+.ssencatCerti_mt img {
+/*    width: 50%;*/
+    display: block;
+    margin: 10px auto;
+}
+.ssencatCerti_t1 div>img {
+    margin: 0 auto;
+}
+.ssencatCerti_t1 img {
+    width: 35%;
+    display: block;
+    padding: 10px;
+}
+.ssencatCerti_list {
+    width: 83%;
+    border-top: 1px solid #a1a1a1;
+    border-bottom: 1px solid #a1a1a1;
+}
+.ssencatCerti_list a {
+    width: 36%;
+    font-size: 1.2em;
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.ssencatCerti_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+.ssencatCerti_b1>div>p {
+    font-size: 1.2em;
+    color: tomato;
+    margin: 20px;
+}
+
+.certi_box1 {
+    display: flex;
+}
+
+.certi_box1>div:nth-child(1) {
+    width: 27%;
+}
+.certi_box1>div:nth-child(2) {
+    width: 60%;
+}
+.certi_box1>div>p {
+    font-size: 1.1em;
+    line-height: 30px;
+    padding: 15px;
+}
+.certi_box1>div>img {
+    width: 80%;
+}
+.certi_box1>div>img:nth-child(2) {
+    width: 75%;
+}
+.ssencatCerti_b2>div>p {
+    font-size: 1.2em;
+    color: tomato;
+    margin: 10px;
+}
+.certi_box2 {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+}
+.certi_box2>img {
+    width: 20%;
+    height: 100%;
+}
+.certi_box3 {
+    width: 50%;
+    margin-left: 20%;
+}
+.certi_box3>img {
+    width: 500px;
+    height: 150px;
+}
+.ssencatCerti_b3>div:nth-child(1) p {
+    font-size: 1.2em;
+    color: tomato;
+    margin: 20px;
+}
+.certi_box4 {
+    width: 95%;
+    display: flex;
+    margin-bottom: 30px;
+}
+.certi_box4>p {
+    width: 20%;
+    font-size: 1.1em;
+    margin: 10px;
+}
+.certi_box4 img{
+    width: 55%;
+}
+.certi_box5 {
+    width: 80%;
+    display: flex;
+    margin: 10px 0;
+}
+
+.certi_box5>img:nth-child(1) {
+    width: 70%;
+}
+.certi_box5>img:nth-child(2) {
+    width: 40%;
+}
+.certi_box6>p {
+    font-size: 1.2em;
+}
+
+/*********** Table ************/
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-aspr{background-color:#68cbd0;border-color:#c0c0c0;color:#ffffff;font-family:Impact, Charcoal, sans-serif !important;;
+  font-size:18px;text-align:center;vertical-align:top}
+.tg .tg-bmvt{border-color:#c0c0c0;font-family:Impact, Charcoal, sans-serif !important;;font-size:18px;text-align:center;
+  vertical-align:top}
+
+/********************* Ssencat Productmanagement  3-4 *************************/
+.ssencatProd_t1 {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    margin-left: 1.5%;
+}
+.ssencatProd_t1 h1 {
+    margin-bottom: 20px;
+}
+.ssencatProd_mt img {
+/*    width: 50%;*/
+    display: block;
+    margin: 10px auto;
+}
+.ssencatProd_t1 div>img {
+    margin: 0 auto;
+}
+.ssencatProd_t1 img {
+    width: 45%;
+    display: block;
+    padding: 10px;
+}
+.ssencatProd_list {
+    width: 83%;
+    border-top: 1px solid #a1a1a1;
+    border-bottom: 1px solid #a1a1a1;
+}
+.ssencatProd_list a {
+    width: 36%;
+    font-size: 1.2em;
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.ssencatProd_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+.ssencatProd_b1>div {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+.ssencatProd_b1>div img {
+    width: 35%;
+}
+
+/************************** Ssencat Patent  3-5 ***************************/
+
+.ssencatPatent_t1 {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    margin-left: 1.5%;
+}
+.ssencatPatent_t1 h1 {
+    margin-bottom: 20px;
+}
+.ssencatPatent_mt img {
+/*    width: 50%;*/
+    display: block;
+    margin: 10px auto;
+}
+.ssencatPatent_t1 div>img {
+    margin: 0 auto;
+}
+.ssencatPatent_t1 img {
+    width: 45%;
+    display: block;
+    padding: 10px;
+}
+.ssencatPatent_list {
+    width: 83%;
+    border-top: 1px solid #a1a1a1;
+    border-bottom: 1px solid #a1a1a1;
+}
+.ssencatPatent_list a {
+    width: 36%;
+    font-size: 1.2em;
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.ssencatPatent_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+.ssencatPatent_b1>div {
+    width: 80%;
+    display: flex;
+}
+.ssencatPatent_b1>div img {
+    width: 100%;
+}
+
+/************************** enginesupplysystem  4- ***************************/
+.engin_t1 {
+    margin: 100px 50px 100px 30px;
+}
+.engin_t1 h1 {
+    width: 80%;
+    margin-bottom: 40px;
+    color: #463838;
+    background: #afafaf;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 40px;
+    margin-bottom: 90px;
+    box-shadow: 5px 6px 6px;
+}
+.engin_t1 p {
+    width: 80%;
+    font-size: 1.2em;
+    line-height: 40px;
+/*    color: #fff;*/
+    background: #e1e1e1;
+    border-radius: 20px;
+    padding: 10px 30px;
+    box-shadow: 5px 6px 6px;
+    margin-left: 6%;
+}
+.engin_t1>p>span:nth-child(1){
+    font-size: 1.2em;
+    color: #5ca72a;
+}
+.engin_t1>p>span:nth-child(4){
+    font-size: 1.1em;
+    color: #1451c2;
+}
+.engin_t2 {
+    margin: 0px 50px 100px 30px;
+}
+.engin_t2 p {
+    width: 80%;
+    font-size: 1.2em;
+    line-height: 40px;
+    background: #e1e1e1;
+    border-radius: 20px;
+    padding: 10px 30px;
+    box-shadow: 5px 6px 6px;
+    margin-left: 12%;
+}
+.engin_t2>p>span:nth-child(1){
+    font-size: 1.2em;
+    color: #5ca72a;
+}
+.engin_t2>p>span:nth-child(4){
+    font-size: 1.1em;
+    color: #1451c2;
+}
+
+/************************** enginesupplysystem  4-2 ***************************/
+.emulsion_vi {
+    position: absolute;
+    top: 20px;
+    margin-left: 42.5%;
+}
+.emulsion_vi>p {
+    width: 150px;
+    height: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    background: #76ffff;
+    box-shadow: 2px 2px 2px;
+    border-radius: 20px;
+    padding-top: 4px;
+}
+.emulsionTech_t1 {
+    width: 50%;
+    position: absolute;
+    top: 10%;
+    margin-left: 3.8%;
+}
+.emulsionTech_t1 h1 {
+    margin-bottom: 20px;
+    color: #d3722d;
+}
+.emulsionTech_mt img {
+    display: block;
+    margin: 10px auto;
+}
+
+.emulsionTech_list {
+    width: 83%;
+    border-top: 1px solid #a1a1a1;
+    border-bottom: 1px solid #a1a1a1;
+}
+.emulsionTech_list a {
+    width: 36%;
+    font-size: 1.2em;
+    margin: 5px 0 5px 20px;
+    padding-left: 20px;
+    border-radius: 15%;
+    background: #92a7aa;
+    box-shadow: 2px 2px 2px;
+}
+.emulsionTech_list a:hover {
+    background: #e1e1e1;
+    box-shadow: none;
+}
+.emulsionTech_b1 img{
+    width: 50%;
+}
+.emulsionTech_b2>div {
+    width: 80%;
+    display: flex;
+}
+.emulsionTech_b2>div img {
+    width: 80%;
+    margin: 10px;
+}
+.emulsionTech_b3>div {
+    width: 80%;
+    display: flex;
+}
+.emulsionTech_b3>div img {
+    width: 80%;
+    margin: 10px;
+}
+
+
+.foot {
+    width: 100%;
+    height: 25vh;
+    background: rgba(13, 130, 78, 0.8);
+    display: block;
+    margin-top: -3px;
+}
+.foot p {
+    font-size: 1.4em;
+    text-align: center;
+    line-height: 40px;
+    padding: 3px;
+}
+
+/******************************  가로모드 태블릿이나 오래된 데스크탑 모니터  기준 1090w 620h */
+@media only screen and (min-width: 1024px) and (max-width: 1365px) {
+   
+    #header_pc {
+        width: 100%;
+        height: 60px;
+        top: 0;
+        left: 0;
+
+    }
+    
+    #logo img{
+        width: 230px;
+        height: 45px;
+        top: 10px;
+        left: 30px;
+    }
+
+    /****************** Scroll Bar ******************/
+    .roll_bar {
+        width: 60px;
+        height: 200px;
+        position: absolute;
+        top: 62%;
+        left: 0;
+        z-index: 999999;
+    }
+    .roll_bar>p{
+        color: #fff;
+        font-size: .8em;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 2pt;
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+    }
+    #scroll_btn {
+        width: 35px;
+        height: 100px;
+    /*        background: skyblue;*/
+        position: relative;
+        top: 0;
+        margin: 5px auto;
+        padding-top: 10px;
+        border: 3px solid #fff;
+        border-radius: 40px;
+    }
+    #scroll_btn span, #scroll_btn::before, #scroll_btn::after {
+        content: "";
+        display: block;
+        background: #fff;
+        width: 80%;
+        height: 5px;
+    /*    margin-bottom: 5px;*/
+        margin: 5px auto;
+        animation-duration: 1.6s;
+        animation-name: scrolBar;
+        animation-iteration-count: infinite;
+    }
+    #scroll_btn.on span, #scroll_btn.on::before, #scroll_btn.on::after {
+        background: #222328;
+    }
+    @keyframes scrolBar {0%{margin-top: 0%;}100%{margin-top: 70%;}}
+
+    #fp-nav {
+        top: 80%;
+    }
+    .fp-slidesNav {
+        left: 50%;
+    }
+
+    /****************** HEADER MENU Bar ******************/
+    .menu_bar {
+    /*    width: 100%*/
+        position: absolute;
+        top: 0;
+        left: 49%;
+        z-index: 1;
+    }
+    .menu_bar>div>p>span{
+        color: #fff;
+        font-size: .8em;
+        font-weight: bold;
+        letter-spacing: 2pt;
+        position: relative;
+        top: -70%;
+        left: 26%;
+        animation-duration: 1s;
+        animation-name: menuBar;
+        animation-iteration-count: infinite;
+    }
+
+    #menu_btn {
+        width: 100px;
+        height: 35px;
+        position: relative;
+        top: 0;
+        margin: 5px auto;
+        padding-top: 10px;
+        border: 3px solid #fff;
+        border-radius: 40px;
+
+    }
+    @keyframes menuBar {
+        0% {
+            top: -70%;
+        } 
+        100% {
+            top: 5%;
+        }
+    }
+
+    .slide_title_pc {
+        background: #cfd8dc;
+        border-bottom: 1px solid #cccc;
+        box-shadow: 0 2px 5px #666;
+        height: 150px;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        right: 0;
+    /*    z-index: 1;*/
+        display: none;
+    }
+    
+    .p_nav {
+        width: 65%;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        display: none;
+    }
+    .p_nav>ul {
+        display: flex;
+
+    /*    z-index: 10;*/
+    }
+
+    .p_nav>ul>li>a {
+        width: 100%;
+        font-size: 1em;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+        border-left: 3px solid rgba(0,0,0,0);
+
+    }
+    .p_nav>ul>li>a:hover {
+        border-left: 3px solid aqua;
+    /*    background: #e1e1e1;*/
+
+    }
+    .p_nav>ul>li {
+        flex: 1;
+        height: auto;
+        border-left: 1px solid rgba(0,0,0,0.2);
+        border-right: 1px solid rgba(0,0,0,0.2);
+/*        background: pink;*/
+    }
+
+
+    
+    .p_nav>ul>li:hover ul{
+        display: block;
+
+    }
+    .p_nav>ul>li>ul>li {
+        width: 100%;
+        border-left: 3px solid rgba(0,0,0,0);
+        background: #cfd8dc;
+    }
+    .p_nav>ul>li>ul>li:hover {
+        border-left: 3px solid red;
+    /*    background: yellowgreen;*/
+    }
+    .p_nav>ul>li>ul>li>a {
+        width: 95%;
+        margin: 15px auto;
+        font-size: .8em;
+        color: #333;
+        text-align: center;
+
+    }
+   
+    /********** slide 네비게이션 ***********/
+   
+    section {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .slider_tj1 {
+        width: 100%;
+        top: 35%;
+    }
+    .slider_tj1 p {
+        width: 80%;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #1a1a1a;
+        line-height: 60px;
+       
+    }
+    .slider_tj1>div>p>span {
+        font-size: 1.7em;
+    }
+  
+    /************************************ OnGreen 2 ********************/
+    .ongreen_m1 {
+        margin: 30px 50px 30px 30px;
+    }
+    .ongreen_m1 h1 {
+        color: #fff;
+    }
+    .ongreen_m1 p {
+        width: 80%;
+        font-size: 1.1em;
+        color: #fff;
+    /*    margin: 20px;*/
+    }
+    .ongreen_m1>p:nth-child(2) span {
+        font-size: 1em;
+        color: #75f41e;
+    }
+    .ongreen_m1>p:nth-child(3) span {
+        font-size: 1em;
+        color: #1451c2;
+    }
+    .ongreen_img {
+        margin-top: 3%;
+    }
+    .ongreen_img div{
+        width: 20%;
+
+    }
+    .ongreen_img img{
+        width: 230px;
+        height: 190px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 20px;
+        border: 3px solid #fff;
+
+    }
+    .green_t1 {
+        font-size: 1.1em;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        color: #fff;
+    }
+    .green_p1 {
+        width: 85%;
+        font-size: 1em;
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+    }
+
+    /**************************** Ongreen Tech 2-2 ************************/
+    .tech_vi {
+        position: absolute;
+        top: 20px;
+        margin-left: 16.5%;
+    }
+    .tech_vi>p {
+        width: 150px;
+        height: 30px;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        border-radius: 20px;
+        padding-top: 4px;
+        box-shadow: 2px 2px 2px;
+    }
+    .ongreen_t1 {
+        width: 20%;
+        position: absolute;
+        top: 12%;
+        margin-left: 1.5%;
+    }
+    .ongreen_t1 h1 {
+        margin-bottom: 20px;
+    }
+    .ongreen_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .green_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .green_list a {
+        width: 38%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .green_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    
+    .tech_sub {
+        display: none;
+    }
+    .green_b1 p{
+        width: 78%;
+        font-size: 1em;
+        line-height: 20px;
+        margin: 5px;
+    }
+    .green_b1>img {
+        width: 40%;
+    }
+    .green_b3 {
+        width: 70%;
+    }
+    .green_b4 {
+        width: 82%;
+
+    }
+    .green_b4 div {
+        display: flex;
+    }
+    .green_b4>div>img {
+        padding: 5px;
+        margin: 10px auto;
+    }
+    /************************ Certificate  2-3 **************************/
+    .certificate_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .certificate_t1 div>img {
+        margin: 0 auto;
+    }
+    .certificate_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .certificate_t1 h1 {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .certificate_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .certificate_list a {
+        width: 44%;
+        font-size: 1em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .certificate_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+
+    .certificate_b1>img {
+        width: 50%;
+        display: block;
+    }
+    .certificate_b3>img, .certificate_b4>img, .certificate_b5>img, .certificate_b6>img  {
+        width: 50%;
+    }
+    .certificate_b7>img,.certificate_b2>img {
+        width: 35%;
+    }
+    /**************** Ongreen Productmanagement  2-4 *******************/
+
+    .quality_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .quality_t1 h1 {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .quality_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .quality_t1 div>img {
+        margin: 0 auto;
+    }
+    .quality_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+
+    .quality_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .quality_list a {
+        width: 44%;
+        font-size: 1em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .quality_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+
+    .quality_b1>img {
+        width: 60%;
+    }
+    .quality_b2>img {
+        width: 48%;
+    }
+    .quality_b3>img, .quality_b4>img {
+        width: 70%;
+    }
+
+    /************************ OnGreen Patent 2-5 ***********************/
+    .onPatent_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .onPatent_t1 h1 {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .onPatent_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .onPatent_t1 div>img {
+        margin: 0 auto;
+    }
+    .onPatent_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .onPatent_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .onPatent_list a {
+        width: 42%;
+        font-size: 1.4em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .onPatent_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+
+    .onPatent_b1>img {
+        width: 70%;
+    }
+
+    /**************** Ssencat  3 *******************/
+
+    .ssencat_t1 {
+        margin: 30px 50px 100px 30px;
+    }
+    .ssencat_t1 h1 {
+        margin-bottom: 30px;
+    }
+    .ssencat_t1 p {
+        width: 80%;
+        font-size: 1em;
+        line-height: 30px;
+    /*    margin: 10px;*/
+    }
+    .ssencat_t1>p:nth-child(2) span {
+        font-size: 1em;
+        color: #75f41e;
+    }
+    .ssencat_t1>p:nth-child(3) span {
+        font-size: 1em;
+        color: #1451c2;
+    }
+    .ssencat_img {
+        margin-top: -7%;
+    }
+    .ssencat_img div{
+        width: 85%;
+        margin: 0 auto;
+
+    }
+    .ssencat_img>div>div {
+        width: 230px;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 20px;
+        display: block;
+        border: 3px solid #fff;
+    /*    object-fit: cover;*/
+    }
+    .ssencat_img img{
+        transform: scale(190%);
+    }
+    .eng_3 img{
+        transform: scale(200%) translateY(20%);
+
+    }
+    .cat_t1 {
+        font-size: 1.1em;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .cat_p1 {
+        width: 90%;
+        font-size: 1em;
+        margin: 0 auto;
+    }
+
+    /************************ SsencatTech   3-2 ******************************/
+    .ssencat_vi {
+        position: absolute;
+        top: 20px;
+        margin-left: 16.5%;
+    }
+    .ssencat_vi>p {
+        width: 150px;
+        height: 30px;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        box-shadow: 2px 2px 2px;
+        border-radius: 20px;
+        padding-top: 4px;
+    }
+    .ssencatTech_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .ssencatTech_t1 h1 {
+        margin-bottom: 20px;
+    }
+    .ssencatTech_mt img {
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatTech_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatTech_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatTech_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatTech_list a {
+        width: 47%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        box-shadow: 2px 2px 2px;
+        background: #92a7aa;
+    }
+    .ssencatTech_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatTech_b1>p:nth-child(1){
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .ssencatTech_b1>p:nth-child(2){
+        width: 80%;
+        font-size: .9em;
+        margin: 10px;
+    }
+    .ssencatTech_b1>p:nth-child(3){
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+    .ssencatTech_b1>p:nth-child(4){
+        width: 80%;
+        font-size: .9em;
+        margin: 10px;
+    }
+    .ssencatTech_b1>div {
+        width: 85%;
+    }
+    .ssencatTech_b1>div>p {
+        width: 40%;
+    }
+    .ssencatTech_b1>div>img {
+        width: 30%;
+    }
+    .ssencatTech_b2>p {
+        width: 83%;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 5px 20px;
+    }
+    .ssencatTech_b2>p:nth-child(3) {
+        border-top: 1px solid #a1a1a1;
+    }
+    .ssencatTech_b2>div>img {
+        width: 30%;
+        display: block;
+    }
+    .ssencatTech_b2>div {
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+    /*    margin: 10px auto;*/
+        justify-content: center;
+    }
+    .ssencatTech_b2>div>p {
+        width: 28%;
+        margin: 5px 20px;
+        font-size: .8em
+    }
+    .emg_p1,.emg_p2 {
+        width: 80%;
+        display: flex;
+/*        flex-wrap: wrap;*/
+/*        justify-content: center;*/
+    }
+    .emg_p1>div {
+        width: 45%;
+        margin: 5px 10px;
+    }
+    .emg_p2>div {
+        width: 45%;
+        margin: 5px 10px;
+    }
+    .ssencatTech_b4>div>div>p {
+        width: 35%;
+        height: 23px;
+        font-size: .8em;
+        border-radius: 10px;
+        background: rgba(73, 157, 7, 0.8);
+        margin: 10px auto;
+        padding: 2px 0 0 10px; 
+    }
+    .ssencatTech_b4>div>div>p:nth-child(3){
+        width: 70%;
+        height: auto;
+        background: none;
+    }
+    .ssencatTech_b4>div>div>img {
+        width: 55%;
+    }
+
+    /******************* Ssencat Certificates 3-3 ***************************/
+    .ssencatCerti_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .ssencatCerti_t1 h1 {
+        margin-bottom: 20px;
+    }
+    .ssencatCerti_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatCerti_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatCerti_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatCerti_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatCerti_list a {
+        width: 36%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatCerti_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatCerti_b1>div>p {
+        font-size: 1em;
+        color: tomato;
+        margin: 15px;
+    }
+    
+    .certi_box1 {
+        display: flex;
+    }
+
+    .certi_box1>div:nth-child(1) {
+        width: 28%;
+    }
+    .certi_box1>div:nth-child(2) {
+        width: 55%;
+    }
+    .certi_box1>div>p {
+        font-size: .8em;
+        line-height: 20px;
+        padding: 15px;
+    }
+    .certi_box1>div>img {
+        width: 80%;
+    }
+    .certi_box1>div>img:nth-child(2) {
+        width: 75%;
+    }
+    .ssencatCerti_b2>div>p {
+        font-size: 1.1em;
+        color: tomato;
+        margin: 15px;
+    }
+    .certi_box2 {
+        width: 75%;
+        display: flex;
+        margin: 0 auto;
+    }
+    .certi_box2>img {
+        width: 18%;
+    }
+    .certi_box3 {
+        width: 50%;
+        margin-left: 20%;
+    }
+    .certi_box3>img {
+        width: 600px;
+        height: 200px;
+    }
+    .ssencatCerti_b3>div:nth-child(1) p {
+        font-size: 1.1em;
+        color: tomato;
+        margin: 15px;
+    }
+    .certi_box4 {
+        width: 95%;
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .certi_box4>p {
+        width: 25%;
+        font-size: 1em;
+        margin: 10px;
+    }
+    .certi_box4 img{
+        width: 55%;
+    }
+    .certi_box5 {
+        width: 80%;
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .certi_box5>img:nth-child(1) {
+        width: 60%;
+    }
+    .certi_box5>img:nth-child(2) {
+        width: 30%;
+    }
+    .certi_box6>p {
+        font-size: 1em;
+    }
+
+    /********************* Ssencat Productmanagement  3-4 *************************/
+    .ssencatProd_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .ssencatProd_t1 h1 {
+        margin-bottom: 20px;
+    }
+    .ssencatProd_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatProd_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatProd_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatProd_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatProd_list a {
+        width: 36%;
+        font-size: 1.2em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatProd_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatProd_b1>div {
+        width: 80%;
+        display: flex;
+    }
+    .ssencatProd_b1>div img {
+        width: 36%;
+    }
+
+    /************************** Ssencat Patent  3-5 ***************************/
+
+    .ssencatPatent_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .ssencatPatent_t1 h1 {
+        margin-bottom: 20px;
+    }
+    .ssencatPatent_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatPatent_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatPatent_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatPatent_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatPatent_list a {
+        width: 36%;
+        font-size: 1.2em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatPatent_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatPatent_b1>div {
+        width: 80%;
+        display: flex;
+    }
+    .ssencatPatent_b1>div img {
+        width: 90%;
+    }
+
+    /************************** enginesupplysystem  4- ***************************/
+    .engin_t1 {
+        margin: 80px 50px 50px 50px;
+    }
+    .engin_t1 h1 {
+        width: 80%;
+/*        margin-bottom: 10px;*/
+        color: #463838;
+        background: #afafaf;
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+        box-shadow: 5px 6px 6px;
+    }
+    .engin_t1 p {
+        width: 80%;
+        font-size: 1em;
+        line-height: 30px;
+    /*    color: #fff;*/
+        background: #e1e1e1;
+        border-radius: 20px;
+        padding: 10px 30px;
+        box-shadow: 5px 6px 6px;
+        margin-left: 6%;
+    }
+    .engin_t1>p>span:nth-child(1){
+        font-size: 1.1em;
+        color: #5ca72a;
+    }
+    .engin_t1>p>span:nth-child(4){
+        font-size: 1.1em;
+        color: #1451c2;
+    }
+    .engin_t2 {
+        margin: 0 50px 100px 50px;
+    }
+    .engin_t2 p {
+        width: 80%;
+        font-size: 1em;
+        line-height: 30px;
+        background: #e1e1e1;
+        border-radius: 20px;
+        padding: 10px 30px;
+        box-shadow: 5px 6px 6px;
+        margin-left: 12%;
+    }
+    .engin_t2>p>span:nth-child(1){
+        font-size: 1.1em;
+        color: #5ca72a;
+    }
+    .engin_t2>p>span:nth-child(4){
+        font-size: 1.1em;
+        color: #1451c2;
+    }
+
+    /************************** enginesupplysystem  4-2 ***************************/
+    .emulsion_vi {
+        position: absolute;
+        top: 20px;
+        margin-left: 43%;
+    }
+    .emulsion_vi>p {
+        width: 120px;
+        height: 30px;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        box-shadow: 2px 2px 2px;
+        border-radius: 20px;
+        padding-top: 4px;
+    }
+    .emulsionTech_t1 {
+        width: 50%;
+        position: absolute;
+        top: 10%;
+        margin-left: 3.8%;
+    }
+    .emulsionTech_t1 h1 {
+        margin-bottom: 20px;
+        color: #d3722d;
+    }
+    .emulsionTech_mt img {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .emulsionTech_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .emulsionTech_list a {
+        width: 40%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .emulsionTech_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .emulsionTech_b1 img{
+        width: 50%;
+    }
+    .emulsionTech_b2>div {
+        width: 80%;
+        display: flex;
+    }
+    .emulsionTech_b2>div img {
+        width: 80%;
+        margin: 10px;
+    }
+    .emulsionTech_b3>div {
+        width: 80%;
+        display: flex;
+    }
+    .emulsionTech_b3>div img {
+        width: 80%;
+        margin: 10px;
+    }
+
+
+    .foot {
+        width: 100%;
+        height: 25vh;
+        background: rgba(13, 130, 78, 0.8);
+    }
+    .foot p {
+        font-size: 1em;
+        text-align: center;
+        line-height: 25px;
+        padding: 3px;
+    }
+    
+}
+
+/************************ 세로 모드의 태블릿이나 큰 화면을 가진 스마트폰의 가로모드  기본 895w  550h******/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #header_pc {
+        width: 100%;
+        height: 60px;
+        top: 0;
+        left: 0;
+    }
+    
+    #logo img{
+        width: 200px;
+        height: 40px;
+        top: 15px;
+        left: 30px;
+    }
+
+    /****************** Scroll Bar ******************/
+    .roll_bar {
+        width: 60px;
+        height: 200px;
+        position: absolute;
+        top: 60%;
+        left: 0;
+        z-index: 999999;
+    }
+    .roll_bar>p{
+        color: #fff;
+        font-size: .6em;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 2pt;
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+    }
+    #scroll_btn {
+        width: 30px;
+        height: 90px;
+    /*        background: skyblue;*/
+        position: relative;
+        top: 0;
+        margin: 5px auto;
+        padding-top: 10px;
+        border: 3px solid #fff;
+        border-radius: 40px;
+    }
+    #scroll_btn span, #scroll_btn::before, #scroll_btn::after {
+        content: "";
+        display: block;
+        background: #fff;
+        width: 80%;
+        height: 5px;
+    /*    margin-bottom: 5px;*/
+        margin: 5px auto;
+    }
+    #scroll_btn.on span, #scroll_btn.on::before, #scroll_btn.on::after {
+        background: #222328;
+    }
+
+    #fp-nav {
+        top: 80%;
+    }
+    .fp-slidesNav {
+        left: 50%;
+    }
+
+    /****************** HEADER MENU Bar ******************/
+    .menu_bar {
+    /*    width: 100%*/
+        position: absolute;
+        top: 0;
+        left: 49%;
+        z-index: 1;
+    }
+    .menu_bar>div>p>span{
+        color: #fff;
+        font-size: .8em;
+        font-weight: bold;
+        letter-spacing: 2pt;
+        position: relative;
+        top: -70%;
+        left: 26%;
+    }
+
+    #menu_btn {
+        width: 90px;
+        height: 30px;
+        position: relative;
+        top: 0;
+        margin: 5px auto;
+        padding-top: 5px;
+        border: 3px solid #fff;
+        border-radius: 40px;
+    }
+
+    .slide_title_pc {
+        background: #cfd8dc;
+        border-bottom: 1px solid #cccc;
+        box-shadow: 0 2px 5px #666;
+        height: 120px;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        right: 0;
+    /*    z-index: 1;*/
+        display: none;
+    }
+    
+    .p_nav {
+        width: 65%;
+        position: absolute;
+        top: 34px;
+        right: 0;
+        display: none;
+    }
+    .p_nav>ul {
+        display: flex;
+
+    /*    z-index: 10;*/
+    }
+
+    .p_nav>ul>li>a {
+        width: 100%;
+        font-size: .8em;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+        border-left: 3px solid rgba(0,0,0,0);
+
+    }
+    .p_nav>ul>li>a:hover {
+        border-left: 3px solid aqua;
+    /*    background: #e1e1e1;*/
+
+    }
+    .p_nav>ul>li {
+        height: 12%;
+        border-left: 1px solid rgba(0,0,0,0.2);
+        border-right: 1px solid rgba(0,0,0,0.2);
+/*        background: pink;*/
+    }
+
+
+   
+    .p_nav>ul>li:hover ul{
+        display: block;
+
+    }
+    .p_nav>ul>li>ul>li {
+        width: 100%;
+        border-left: 3px solid rgba(0,0,0,0);
+        background: #cfd8dc;
+    }
+    .p_nav>ul>li>ul>li:hover {
+        border-left: 3px solid red;
+    /*    background: yellowgreen;*/
+    }
+    .p_nav>ul>li>ul>li>a {
+        width: 95%;
+        margin: 15px auto;
+        font-size: .6em;
+        color: #333;
+        text-align: center;
+
+    }
+   
+    /********** slide 네비게이션 ***********/
+   
+    section {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .slider_tj1 {
+        width: 100%;
+        top: 40%;
+    }
+    .slider_tj1 p {
+        width: 80%;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #1a1a1a;
+        line-height: 50px;
+       
+    }
+    .slider_tj1>div>p>span {
+        font-size: 1.6em;
+    }
+  
+    /************************************ OnGreen 2 ********************/
+    .ongreen_m1 {
+        margin: 40px 50px 5px 30px;
+/*        margin: 110px 50px 100px 30px;*/
+    }
+    .ongreen_m1 h1 {
+        color: #fff;
+    }
+    .ongreen_m1 p {
+        width: 90%;
+        font-size: .9em;
+        color: #fff;
+    /*    margin: 20px;*/
+    }
+    .ongreen_m1>p:nth-child(2) span {
+        font-size: 1em;
+        color: #75f41e;
+    }
+    .ongreen_m1>p:nth-child(3) span {
+        font-size: 1em;
+        color: #1451c2;
+    }
+    .ongreen_img {
+        margin-top: 0;
+    }
+    .ongreen_img div{
+        width: 17%;
+
+    }
+    .ongreen_img img{
+        width: 180px;
+        height: 140px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 20px;
+        border: 3px solid #fff;
+
+    }
+    .green_t1 {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        color: #fff;
+    }
+    .green_p1 {
+        width: 80%;
+        font-size: .9em;
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+    }
+
+    /**************************** Ongreen Tech 2-2 ************************/
+    .tech_vi {
+        position: absolute;
+        top: 20px;
+        margin-left: 16%;
+    }
+    .tech_vi>p {
+        width: 150px;
+        height: 30px;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        border-radius: 20px;
+        padding-top: 4px;
+        box-shadow: 2px 2px 2px;
+    }
+    .ongreen_t1 {
+        width: 20%;
+        position: absolute;
+        top: -8%;
+        margin-left: 1.5%;
+    }
+    .ongreen_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .ongreen_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .green_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .green_list a {
+        width: 38%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 14%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .green_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    
+    .tech_sub {
+        display: none;
+    }
+    .green_b1 p{
+        width: 78%;
+        font-size: .9em;
+        line-height: 25px;
+    }
+
+    .green_b3 {
+        width: 70%;
+    }
+    .green_b4 {
+        width: 82%;
+
+    }
+    .green_b4 div {
+        display: flex;
+    }
+    .green_b4>div>img {
+        padding: 5px;
+        margin: 10px auto;
+    }
+    /************************ Certificate  2-3 **************************/
+    .certificate_t1 {
+        width: 20%;
+        position: absolute;
+        top: 12%;
+        margin-left: 1.5%;
+    }
+    .certificate_t1 div>img {
+        margin: 0 auto;
+    }
+    .certificate_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .certificate_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .certificate_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .certificate_list a {
+        width: 46.5%;
+        font-size: 1em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 14%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .certificate_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+
+    .certificate_b1>img {
+        width: 53%;
+        display: block;
+    }
+    .certificate_b3>img, .certificate_b4>img, .certificate_b5>img, .certificate_b6>img  {
+        width: 45%;
+    }
+    .certificate_b7>img,.certificate_b2>img {
+        width: 41%;
+    }
+    /**************** Ongreen Productmanagement  2-4 *******************/
+
+    .quality_t1 {
+        width: 20%;
+        position: absolute;
+        top: 12%;
+        margin-left: 1.5%;
+    }
+    .quality_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .quality_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .quality_t1 div>img {
+        margin: 0 auto;
+    }
+    .quality_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+
+    .quality_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .quality_list a {
+        width: 47%;
+        font-size: 1em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 14%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .quality_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+
+    .quality_b1>img {
+        width: 60%;
+    }
+    .quality_b2>img {
+        width: 48%;
+    }
+    .quality_b3>img, .quality_b4>img {
+        width: 70%;
+    }
+
+    /************************ OnGreen Patent 2-5 ***********************/
+    .onPatent_t1 {
+        width: 20%;
+        position: absolute;
+        top: 12%;
+        margin-left: 1.5%;
+    }
+    .onPatent_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .onPatent_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .onPatent_t1 div>img {
+        margin: 0 auto;
+    }
+    .onPatent_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .onPatent_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .onPatent_list a {
+        width: 42%;
+        font-size: 1em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .onPatent_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+
+    .onPatent_b1>img {
+        width: 70%;
+    }
+
+    /**************** Ssencat  3 *******************/
+
+    .ssencat_t1 {
+        margin: 40px 50px 5px 30px;
+    }
+    .ssencat_t1 h1 {
+        margin-bottom: 30px;
+    }
+    .ssencat_t1 p {
+        width: 90%;
+        font-size: .9em;
+        line-height: 20px;
+    /*    margin: 10px;*/
+    }
+    .ssencat_t1>p:nth-child(2) span {
+        font-size: 1em;
+        color: #75f41e;
+    }
+    .ssencat_t1>p:nth-child(3) span {
+        font-size: 1em;
+        color: #1451c2;
+    }
+    .ssencat_img {
+        margin-top: 2%;
+    }
+    .ssencat_img div{
+        width: 17%;
+        margin: 0 auto;
+
+    }
+    .ssencat_img>div>div {
+        width: 180px;
+        height: 140px;
+        overflow: hidden;
+        border-radius: 20px;
+        display: block;
+        border: 3px solid #fff;
+    /*    object-fit: cover;*/
+    }
+    .ssencat_img img{
+        transform: scale(190%);
+    }
+    .eng_3 img{
+        transform: scale(200%) translateY(20%);
+
+    }
+    .cat_t1 {
+        font-size: 1em;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .cat_p1 {
+        width: 85%;
+        font-size: .9em;
+        margin: 0 auto;
+    }
+
+    /************************ SsencatTech   3-2 ******************************/
+    .ssencat_vi {
+        position: absolute;
+        top: 20px;
+        margin-left: 16%;
+    }
+    .ssencat_vi>p {
+        width: 150px;
+        height: 30px;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        box-shadow: 2px 2px 2px;
+        border-radius: 20px;
+        padding-top: 4px;
+    }
+    .ssencatTech_t1 {
+        width: 20%;
+        position: absolute;
+        top: 12%;
+        margin-left: 1.5%;
+    }
+    .ssencatTech_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .ssencatTech_mt img {
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatTech_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatTech_t1 img {
+        width: 45%;
+        display: block;
+        padding: 5px;
+    }
+    .ssencatTech_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatTech_list a {
+        width: 52%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        box-shadow: 2px 2px 2px;
+        background: #92a7aa;
+    }
+    .ssencatTech_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatTech_b1>p:nth-child(1){
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .ssencatTech_b1>p:nth-child(2){
+        width: 80%;
+        font-size: .9em;
+        margin: 10px;
+    }
+    .ssencatTech_b1>p:nth-child(3){
+        font-size: 1em;
+        font-weight: bold;
+        margin: 5px 0;
+        background: pink;
+    }
+    .ssencatTech_b1>p:nth-child(4){
+        width: 80%;
+        font-size: .9em;
+        margin: 10px;
+        
+    }
+    .ssencatTech_b1>div {
+        width: 90%;
+        display: flex;
+    }
+    .ssencatTech_b1>div>p {
+        width: 60%;
+    }
+    .ssencatTech_b1>div>img {
+        width: 25%;
+    }
+    .ssencatTech_b2>p {
+        width: 83%;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0px 20px;
+    }
+    .ssencatTech_b2>p:nth-child(3) {
+        border-top: 1px solid #a1a1a1;
+    }
+    .ssencatTech_b2>div>img {
+        width: 30%;
+        display: block;
+    }
+    .ssencatTech_b2>div {
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+    /*    margin: 10px auto;*/
+        justify-content: center;
+    }
+    .ssencatTech_b2>div>p {
+        font-size: .8em;
+        width: 32%;
+        margin: 5px 10px;
+    }
+    .emg_p1,.emg_p2 {
+        width: 80%;
+        display: flex;
+/*        flex-wrap: wrap;*/
+/*        justify-content: center;*/
+    }
+    .emg_p1>div {
+        width: 45%;
+        margin: 5px 10px;
+    }
+    .emg_p2>div {
+        width: 45%;
+        margin: 5px 10px;
+    }
+    .ssencatTech_b4>div>div>p {
+        width: 45%;
+        height: 25px;
+        font-size: .8em;
+        border-radius: 10px;
+        background: rgba(73, 157, 7, 0.8);
+        margin: 2px auto;
+        padding: 2px 0 0 10px; 
+    }
+    .ssencatTech_b4>div>div>p:nth-child(3){
+        width: 70%;
+        height: auto;
+        background: none;
+    }
+    .ssencatTech_b4>div>div>img {
+        width: 60%;
+    }
+
+    /******************* Ssencat Certificates 3-3 ***************************/
+    .ssencatCerti_t1 {
+        width: 20%;
+        position: absolute;
+        top: 12%;
+        margin-left: 1.5%;
+    }
+    .ssencatCerti_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .ssencatCerti_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatCerti_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatCerti_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatCerti_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatCerti_list a {
+        width: 42%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatCerti_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatCerti_b1>div>p {
+        font-size: 1em;
+        color: tomato;
+        margin: 5px;
+    }
+    
+    .certi_box1 {
+        display: flex;
+    }
+
+    .certi_box1>div:nth-child(1) {
+        width: 30%;
+    }
+    .certi_box1>div:nth-child(2) {
+        width: 55%;
+    }
+    .certi_box1>div>p {
+        font-size: .8em;
+        line-height: 20px;
+        padding: 10px;
+    }
+    .certi_box1>div>img {
+        width: 80%;
+    }
+    .certi_box1>div>img:nth-child(2) {
+        width: 75%;
+    }
+    .ssencatCerti_b2>div>p {
+        font-size: 1em;
+        color: tomato;
+        margin: 5px;
+    }
+    .certi_box2 {
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+    }
+    .certi_box2>img {
+        width: 18%;
+    }
+    .certi_box3 {
+        width: 45%;
+        margin-left: 20%;
+    }
+    .certi_box3>img {
+        width: 300px;
+        height: 100px;
+    }
+    .ssencatCerti_b3>div:nth-child(1) p {
+        font-size: 1em;
+        color: tomato;
+        margin: 5px;
+    }
+    .certi_box4 {
+        width: 95%;
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .certi_box4>p {
+        width: 25%;
+        font-size: 1em;
+        margin: 10px;
+    }
+    .certi_box4 img{
+        width: 55%;
+    }
+    .certi_box5 {
+        width: 85%;
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .certi_box5>img:nth-child(1) {
+        width: 60%;
+    }
+    .certi_box5>img:nth-child(2) {
+        width: 30%;
+    }
+    .certi_box6>p {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+   
+    /*********** Table ************/
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:10px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:10px;
+      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-aspr{background-color:#68cbd0;border-color:#c0c0c0;color:#ffffff;font-family:Impact, Charcoal, sans-serif !important;;
+      font-size:15px;text-align:center;vertical-align:top}
+    .tg .tg-bmvt{border-color:#c0c0c0;font-family:Impact, Charcoal, sans-serif !important;;font-size:15px;text-align:center;
+      vertical-align:top}
+
+    /********************* Ssencat Productmanagement  3-4 *************************/
+    .ssencatProd_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .ssencatProd_t1 h1 {
+        margin-bottom: 20px;
+    }
+    .ssencatProd_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatProd_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatProd_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatProd_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatProd_list a {
+        width: 36%;
+        font-size: 1.2em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatProd_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatProd_b1>div {
+        width: 80%;
+        display: flex;
+    }
+    .ssencatProd_b1>div img {
+        width: 38%;
+    }
+
+    /************************** Ssencat Patent  3-5 ***************************/
+
+    .ssencatPatent_t1 {
+        width: 20%;
+        position: absolute;
+        top: 10%;
+        margin-left: 1.5%;
+    }
+    .ssencatPatent_t1 h1 {
+        margin-bottom: 20px;
+    }
+    .ssencatPatent_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatPatent_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatPatent_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatPatent_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatPatent_list a {
+        width: 36%;
+        font-size: 1.2em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatPatent_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatPatent_b1>div {
+        width: 80%;
+        display: flex;
+    }
+    .ssencatPatent_b1>div img {
+        width: 95%;
+    }
+
+    /************************** enginesupplysystem  4- ***************************/
+    .engin_t1 {
+        margin: 70px 50px;
+    }
+    .engin_t1 h1 {
+        width: 80%;
+/*        margin-bottom: 10px;*/
+        color: #463838;
+        background: #afafaf;
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+        box-shadow: 5px 6px 6px;
+    }
+    .engin_t1 p {
+        width: 80%;
+        font-size: .8em;
+        line-height: 25px;
+    /*    color: #fff;*/
+        background: #e1e1e1;
+        border-radius: 20px;
+        padding: 10px 30px;
+        box-shadow: 5px 6px 6px;
+        margin-left: 6%;
+    }
+    .engin_t1>p>span:nth-child(1){
+        font-size: 1.2em;
+        color: #5ca72a;
+    }
+    .engin_t1>p>span:nth-child(4){
+        font-size: 1em;
+        color: #1451c2;
+    }
+    .engin_t2 {
+        margin: -20px 50px 70px 50px;
+    }
+    .engin_t2 p {
+        width: 80%;
+        font-size: .8em;
+        line-height: 25px;
+        background: #e1e1e1;
+        border-radius: 20px;
+        padding: 10px 30px;
+        box-shadow: 5px 6px 6px;
+        margin-left: 12%;
+    }
+    .engin_t2>p>span:nth-child(1){
+        font-size: 1.2em;
+        color: #5ca72a;
+    }
+    .engin_t2>p>span:nth-child(4){
+        font-size: 1em;
+        color: #1451c2;
+    }
+
+    /************************** enginesupplysystem  4-2 ***************************/
+    .emulsion_vi {
+        position: absolute;
+        top: 20px;
+        margin-left: 40%;
+    }
+    .emulsion_vi>p {
+        width: 150px;
+        height: 30px;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        box-shadow: 2px 2px 2px;
+        border-radius: 20px;
+        padding-top: 4px;
+    }
+    .emulsionTech_t1 {
+        width: 50%;
+        position: absolute;
+        top: 10%;
+        margin-left: 3.8%;
+    }
+    .emulsionTech_t1 h1 {
+        margin-bottom: 20px;
+        color: #d3722d;
+    }
+    .emulsionTech_mt img {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .emulsionTech_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .emulsionTech_list a {
+        width: 43%;
+        font-size: 1em;
+        margin: 5px 0 5px 20px;
+        padding-left: 20px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .emulsionTech_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .emulsionTech_b1 img{
+        width: 50%;
+    }
+    .emulsionTech_b2>div {
+        width: 80%;
+        display: flex;
+    }
+    .emulsionTech_b2>div img {
+        width: 80%;
+        margin: 10px;
+    }
+    .emulsionTech_b3>div {
+        width: 80%;
+        display: flex;
+    }
+    .emulsionTech_b3>div img {
+        width: 80%;
+        margin: 10px;
+    }
+
+
+    .foot {
+        width: 100%;
+        height: 25vh;
+        background: rgba(13, 130, 78, 0.8);
+    }
+    .foot p {
+        font-size: 1em;
+        text-align: center;
+        line-height: 20px;
+        padding: 3px;
+    }
+}
+
+/******************************  일반적인 스마트폰의 세로모드 420px --> 767px 수정 ********/
+@media only screen and (max-width: 767px){
+    
+    /************ moble setup   ****************/
+    .fp-controlArrow {
+        top: 94%;
+    }
+    .fp-controlArrow.fp-next {
+        border-width: 28.5px 0 28.5px 14px;
+        border-color: transparent transparent transparent #333;
+        right: 5px;
+    }
+    .fp-controlArrow.fp-prev {
+        border-width: 28.5px 14px 28.5px 0;
+        border-color: transparent #333 transparent transparent;
+        left: 5px;
+    }
+    
+     #header_m {
+        width: 100%;
+        height: 60px;
+        margin: 0 auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: block;
+    }
+    
+    #logo img{
+        width: 150px;
+        height: 30px;
+        position: absolute;
+        top: 25%;
+        left: 3%;
+        z-index: 10;
+    }
+
+/*
+    .head{
+        width:100%;
+        height:60px;
+        border-bottom:1px solid #e1e1e1;
+        position: relative;
+    }
+    
+
+    
+    /**** 모바일 버기 버튼 메뉴 *****/
+    #m_btn {
+        width: 25px;
+        height: 30px;
+        position: absolute;
+        top: 25px;
+        right: 10px;
+        z-index: 15;
+        padding-top: 10px;
+    }
+    #m_btn span, #m_btn::before, #m_btn::after {
+        content: "";
+        display: block;
+        background: #333;
+        width: 100%;
+        height: 3px;
+        margin-bottom: 5px;
+        transition: .3s;
+    }
+    #m_btn>span {
+        color: aliceblue;
+    }
+    #m_btn.on span {
+        opacity: 0;
+    }
+    #m_btn.on::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #m_btn.on::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+ 
+    #header_pc {
+        display: none;
+    }
+    .roll_bar {
+        display: none;
+    }
+    .menu_bar {
+        display: none;
+    }
+    .slide_title_PC {
+        display: none;
+    }
+/*
+    nav {
+    background: #61d093;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    }
+*/
+    .m_nav {
+        display: block;
+    }
+   
+    .m_list>li {
+        position: relative;
+        top: 30%;
+        right: 62%;
+        line-height: 40px;
+        margin-left: 28%;
+    }
+    
+    .m_nav>ul>li>a {
+        width: 60%;
+        font-size: .8em;
+        font-weight: inherit;
+        color: #fff;
+        line-height: 30px;
+        text-align: right;
+        padding: 10px;
+        margin: 10px 250px 10px 50%;
+        border-radius: 20px;
+        border: 1px solid #e1e1e1;
+        box-shadow: 1px 1px 1px 0 #333;
+    }
+
+/*
+    .m_nav>ul>li>a:hover {
+        color: #333;
+    }
+*/
+     .m_list {
+        background: #61d093;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-radius: 250px;
+        width: 100%;
+        height: 100%;
+        /* height: 100%; */
+        display: none;
+        
+    
+    }
+    .ul_list {
+        background: #fff;
+        /* background: #95ffc4; */
+        position: fixed;
+        border-radius: 0 250px 250px 0;
+        top: 1%;
+        left: 48%;
+        width: 50%;
+        height: 98%;
+        box-shadow: 2px 2px 2px 0;
+        display: none;
+    }
+    .ul_list:active {
+        display: block;
+    }
+   
+    .ul_list li {
+        width: 50%;
+        position: relative;
+        top: 30%;
+        /* left: 3%; */
+/*      height: 20%;*/
+/*        position: relative;*/
+/*        background: #e1e1e1;*/
+    }
+    .ul_list>li:active {
+        background: #e1e1e1;
+    }
+    .ul_list>li>a {
+        width: 185%;
+        margin: 10px 0 0 10px;
+        font-size: .7em;
+        /* color: #333; */
+        color: #333;
+        /* text-align: ; */
+        line-height: 30px;
+        padding: 10px;
+        border: 1px solid #e1e1e1;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px 0;
+    }
+/*
+    .main_bakimg img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+
+    }
+*/
+    section {
+        margin: 0 auto;
+/*        height: 100vh;*/
+    }
+    video {
+        display: block;
+        
+    }
+    .inputSvg {
+        display: none;
+    }
+    /********** slide 네비게이션 ***********/
+   
+    section {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .slider_tj1 {
+        width: 100%;
+        top: 40%;
+        display: block;
+        text-align: center;
+        
+    }
+    .slider_tj1 p {
+        width: 90%;
+        font-size: .8em;
+        font-weight: bold;
+        color: #1a1a1a;
+        line-height: 40px;
+        margin: 0 auto;
+       
+    }
+    .slider_tj1>div>p>span {
+        font-size: 1.3em;
+    }
+    
+    .text_ani_t1 {
+        display: none;
+    }
+    /************************************ OnGreen 2 ********************/
+    .ongreen_m1 {
+        width: 85%;
+        margin: 70px 20px 30px 20px;
+    }
+    .ongreen_m1 h1 {
+        color: #fff;
+    }
+    .ongreen_m1 p {
+        width: 95%;
+        font-size: .9em;
+        color: #fff;
+        margin: 20px;
+    }
+    .ongreen_m1>p:nth-child(2) span {
+        font-size: 1em;
+        color: #75f41e;
+    }
+    .ongreen_m1>p:nth-child(3) span {
+        font-size: 1em;
+        color: #1451c2;
+    }
+    .ongreen_img {
+        margin-top: 3%;
+        display: inherit;
+        margin-bottom: 10%;
+    }
+    .ongreen_img div{
+        width: 95%;
+
+    }
+    .ongreen_img>div img{
+        width: 70%;
+        height: 30vh;
+        margin: 20px auto;
+        display: block;
+        border-radius: 20px;
+        border: 3px solid #fff;
+    }
+    .green_t1 {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        color: #fff;
+    }
+    .green_p1 {
+        width: 85%;
+        font-size: .9em;
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+    }
+
+    /**************************** Ongreen Tech 2-2 ************************/
+    .tech_vi {
+        position: absolute;
+        top: 70px;
+        margin-left: 12%;
+    }
+    .tech_vi>p {
+        width: 120px;
+        height: 20px;
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        border-radius: 20px;
+        padding-top: 3px;
+        box-shadow: 2px 2px 2px;
+    }
+    .ongreen_t1 {
+        width: 21%;
+        position: absolute;
+        top: 14%;
+        margin-left: 1.5%;
+    }
+    .ongreen_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .ongreen_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .green_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .green_list a {
+        width: 65%;
+        font-size: .7em;
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 14%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .green_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+  
+    .tech_sub {
+        display: none;
+    }
+    .green_b1 p{
+        width: 80%;
+        font-size: .6em;
+        line-height: 15px;
+        padding: 10px;
+        color: #333;
+    }
+    .green_b1 img {
+        width: 80%;
+        margin: 20px 0;
+    }
+    .green_b2 img {
+        width: 105%;
+        margin: 20px 6%;
+    }
+    .green_b3 {
+        width: 85%;
+        margin: 20px 0;
+    }
+    .green_b3 img {
+        width: 80%;
+    }
+    .green_b4 {
+        width: 85%;
+        margin: 20px 0;
+    }
+    .green_b4 div {
+        display: inherit;
+    }
+    .green_b4>div>img {
+        width: 85%;
+        padding: 5px;
+        margin: 10px auto;
+    }
+    /************************ Certificate  2-3 **************************/
+    .certificate_t1 {
+        width: 20%;
+        position: absolute;
+        top: 16%;
+        margin-left: 1.5%;
+    }
+    .certificate_t1 div>img {
+        margin: 0 auto;
+    }
+    .certificate_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .certificate_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .certificate_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .certificate_list a {
+        width: 80%;
+        font-size: .7em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 14%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .certificate_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .certificate_b1,.certificate_b2,.certificate_b3,.certificate_b4,.certificate_b5,.certificate_b6,.certificate_b7 {
+        width: 85%;
+        margin: 10px -1%;
+    }
+    .certificate_b1>img,.certificate_b2>img,.certificate_b3>img, .certificate_b4>img, .certificate_b5>img,.certificate_b6>img,.certificate_b7>img  {
+        width: 95%;
+    }
+    /**************** Ongreen Productmanagement  2-4 *******************/
+
+    .quality_t1 {
+        width: 20%;
+        position: absolute;
+        top: 16%;
+        margin-left: 1.5%;
+    }
+    .quality_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .quality_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .quality_t1 div>img {
+        margin: 0 auto;
+    }
+    .quality_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+
+    .quality_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .quality_list a {
+        width: 80%;
+        font-size: .7em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 14%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .quality_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .quality_b1,.quality_b2,.quality_b3,.quality_b4 {
+        width: 85%;
+        margin: 10px -1%;
+    }
+    .quality_b1>img,.quality_b2>img,.quality_b3>img,.quality_b4>img {
+        width: 95%;
+    }
+
+    /************************ OnGreen Patent 2-5 ***********************/
+    .onPatent_t1 {
+        width: 20%;
+        position: absolute;
+        top: 16%;
+        margin-left: 1.5%;
+    }
+    .onPatent_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .onPatent_mt img {
+        width: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    .onPatent_t1 div>img {
+        margin: 0 auto;
+    }
+    .onPatent_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .onPatent_list {
+        width: 83%;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .onPatent_list a {
+        width: 52%;
+        font-size: .7em;
+    /*    border: 1px solid black;*/
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .onPatent_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .onPatent_b1 {
+        width: 85%;
+    }
+    .onPatent_b1>img {
+        width: 95%;
+    }
+
+    /**************** Ssencat  3 *******************/
+
+    .ssencat_t1 {
+        margin: 65px 10px 70px 30px;
+    }
+    .ssencat_t1 h1 {
+        margin-bottom: 30px;
+    }
+    .ssencat_t1 p {
+        width: 85%;
+        font-size: .9em;
+        line-height: 20px;
+        margin: 10px auto;
+    }
+    .ssencat_t1>p:nth-child(2) span {
+        font-size: 1em;
+        color: #75f41e;
+    }
+    .ssencat_t1>p:nth-child(3) span {
+        font-size: 1em;
+        color: #1451c2;
+    }
+    .ssencat_img {
+        margin-top: -10%;
+        display: inherit;
+    }
+    .ssencat_img div{
+        width: 85%;
+        margin: 20px auto;
+
+    }
+    .ssencat_img>div>div {
+        width: 70vw;
+        height: 30vh;
+        overflow: hidden;
+        border-radius: 20px;
+        display: block;
+        border: 3px solid #fff;
+    /*    object-fit: cover;*/
+    }
+    .ssencat_img img{
+        transform: scale(200%);
+    }
+    .eng_3 img{
+        transform: scale(200%) translateY(20%);
+
+    }
+    .cat_t1 {
+        font-size: 1em;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .cat_p1 {
+        width: 85%;
+        font-size: .9em;
+        margin: 0 auto;
+    }
+
+    /************************ SsencatTech   3-2 ******************************/
+    .ssencat_vi {
+        position: absolute;
+        top: 70px;
+        margin-left: 12%;
+    }
+    .ssencat_vi>p {
+        width: 120px;
+        height: 20px;
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        box-shadow: 2px 2px 2px;
+        border-radius: 20px;
+        padding-top: 3px;
+    }
+    .ssencatTech_t1 {
+        width: 21%;
+        position: absolute;
+        top: 14%;
+        margin-left: 1.5%;
+    }
+    .ssencatTech_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .ssencatTech_mt img {
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatTech_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatTech_t1 img {
+        width: 45%;
+        display: block;
+        padding: 5px;
+    }
+    .ssencatTech_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatTech_list a {
+        width: 85%;
+        font-size: .7em;
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 15%;
+        box-shadow: 2px 2px 2px;
+        background: #92a7aa;
+    }
+    .ssencatTech_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatTech_b1>p:nth-child(1){
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .ssencatTech_b1>p:nth-child(2){
+        width: 80%;
+        font-size: .7em;
+        margin: 10px;
+    }
+    .ssencatTech_b1>p:nth-child(3){
+        font-size: 1em;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+    .ssencatTech_b1>div>p {
+        width: 80%;
+        font-size: .7em;
+        margin: 10px;
+    }
+    .ssencatTech_b1>div {
+        width: 90%;
+        display: inherit;
+    }
+    .ssencatTech_b1>div>img {
+        width: 45%;
+    }
+    .ssencatTech_b2>p {
+        width: 83%;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0px 20px;
+    }
+    .ssencatTech_b2>p:nth-child(3) {
+        border-top: 1px solid #a1a1a1;
+    }
+    .ssencatTech_b2>div>img {
+        width: 55%;
+        display: block;
+    }
+    .ssencatTech_b2>div {
+        width: 85%;
+        display: inherit;
+    }
+    .ssencatTech_b2>div>p {
+        font-size: .7em;
+        width: 90%;
+        margin: 5px 10px;
+    }
+    .ssencatTech_b3 {
+        width: 85%;
+    }
+    .ssencatTech_b3>img {
+        width: 95%;
+    }
+    .emg_p1,.emg_p2 {
+        width: 90%;
+        display: flex;
+    }
+    .emg_p1>div {
+        width: 75%;
+        display: flex;
+    }
+    .emg_p1>div img {
+        width: 100%;
+    }
+    
+    .emg_p2>div:nth-child(1) {
+        width: 75%;
+        display: flex;
+    }
+    .emg_p2>div:nth-child(2){
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+/*        border: 1px solid red;*/
+        
+    }
+    .emg_p2>div:nth-child(2) img {
+        width: 200px;
+        height: 60px;
+    }
+    .emg_p2>div:nth-child(2) p {
+        writing-mode: horizontal-tb;
+        margin-left: 20px;
+        line-height: 10px;
+    }
+    .ssencatTech_b4>div>div>p {
+        writing-mode: vertical-lr;
+/*        text-orientation: upleft;*/
+        width: 5%;
+        height: 70px;
+        font-size: .6em;
+/*        border-radius: 8px;*/
+        background: 0;
+        margin: 0;
+        padding: 0; 
+        
+    }
+    .ssencatTech_b4>div>div>p:nth-child(3){
+        display: block;
+        width: 80%;
+        font-size: .6em;
+        height: auto;
+        background: none;
+    }
+    .ssencatTech_b4>div>div>img {
+        width: 60%;
+    }
+
+    /******************* Ssencat Certificates 3-3 ***************************/
+    .ssencatCerti_t1 {
+        width: 21%;
+        position: absolute;
+        top: 14%;
+        margin-left: 1.5%;
+    }
+    .ssencatCerti_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .ssencatCerti_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatCerti_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatCerti_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatCerti_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatCerti_list a {
+        width: 72%;
+        font-size: .7em;
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatCerti_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatCerti_b1>div>p {
+        font-size: .8em;
+        color: tomato;
+        margin: 5px;
+    }
+    
+    .certi_box1 {
+        display: flex;
+    }
+
+    .certi_box1>div:nth-child(1) {
+        width: 30%;
+    }
+    .certi_box1>div:nth-child(2) {
+        width: 55%;
+    }
+    .certi_box1>div>p {
+        font-size: .7em;
+        line-height: 20px;
+        padding: 10px;
+    }
+    .certi_box1>div>img {
+        width: 110%;
+    }
+    .certi_box1>div>img:nth-child(2) {
+        width: 105%;
+        margin-left: -70px;
+    }
+    .ssencatCerti_b2>div>p {
+        font-size: .8em;
+        color: tomato;
+        margin: 5px;
+    }
+    .certi_box2 {
+        width: 70%;
+        display: flex;
+        margin: 0; 
+        
+    }
+    .certi_box2>img {
+        width: 40%;
+    }
+    .certi_box3 {
+        width: 45%;
+        margin-left: 2%;
+    }
+    .certi_box3>img {
+        width: 300px;
+        height: 100px;
+    }
+    .ssencatCerti_b3>div:nth-child(1) p {
+        font-size: .8em;
+        color: tomato;
+        margin: 5px;
+    }
+    .certi_box4 {
+        width: 95%;
+        display: inherit;
+        margin-bottom: 20px;
+    }
+    .certi_box4>p {
+        width: 85%;
+        font-size: .7em;
+        margin: 5px;
+    }
+    .certi_box4 img{
+        width: 85%;
+        margin-left: 0 !important; 
+        background: pink;
+    }
+    .certi_box5 {
+        width: 85%;
+        display: inherit;
+        margin: 10px 0;
+    }
+
+    .certi_box5>img:nth-child(1) {
+        width: 80%;
+    }
+    .certi_box5>img:nth-child(2) {
+        width: 60%;
+    }
+    .certi_box6>p {
+        font-size: .7em;
+        margin-bottom: 5px;
+    }
+   
+    /*********** Table ************/
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:10px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:10px;
+      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-aspr{background-color:#68cbd0;border-color:#c0c0c0;color:#ffffff;font-family:Impact, Charcoal, sans-serif !important;;
+      font-size:10px;text-align:center;vertical-align:top}
+    .tg .tg-bmvt{border-color:#c0c0c0;font-family:Impact, Charcoal, sans-serif !important;;font-size:10px;text-align:center;
+      vertical-align:top}
+
+    /********************* Ssencat Productmanagement  3-4 *************************/
+    .ssencatProd_t1 {
+        width: 21%;
+        position: absolute;
+        top: 14%;
+        margin-left: 1.5%;
+    }
+    .ssencatProd_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+    .ssencatProd_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatProd_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatProd_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatProd_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatProd_list a {
+        width: 46%;
+        font-size: .7em;
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatProd_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatProd_b1>div {
+        width: 80%;
+        display: inherit;
+    }
+    .ssencatProd_b1>div img {
+        width: 58%;
+        margin: 5px 8%;
+    }
+
+    /************************** Ssencat Patent  3-5 ***************************/
+
+    .ssencatPatent_t1 {
+        width: 21%;
+        position: absolute;
+        top: 14%;
+        margin-left: 1.5%;
+    }
+    .ssencatPatent_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+    .ssencatPatent_mt img {
+    /*    width: 50%;*/
+        display: block;
+        margin: 10px auto;
+    }
+    .ssencatPatent_t1 div>img {
+        margin: 0 auto;
+    }
+    .ssencatPatent_t1 img {
+        width: 45%;
+        display: block;
+        padding: 10px;
+    }
+    .ssencatPatent_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .ssencatPatent_list a {
+        width: 46%;
+        font-size: .7em;
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .ssencatPatent_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .ssencatPatent_b1>div {
+        width: 80%;
+    }
+    .ssencatPatent_b1>div img {
+        width: 100%;
+    }
+
+    /************************** enginesupplysystem  4- ***************************/
+    .engin_t1 {
+        margin: 60px 10px;
+    }
+    .engin_t1 h1 {
+        width: 80%;
+        font-size: 1.1em;
+/*        margin-bottom: 10px;*/
+        color: #463838;
+        background: #afafaf;
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        box-shadow: 5px 6px 6px;
+    }
+    .engin_t1 p {
+        width: 80%;
+        font-size: .8em;
+        line-height: 20px;
+    /*    color: #fff;*/
+        background: #e1e1e1;
+        border-radius: 20px;
+        padding: 10px 30px;
+        box-shadow: 5px 6px 6px;
+        margin-left: 6%;
+    }
+    .engin_t1>p>span:nth-child(1){
+        font-size: 1em;
+        color: #5ca72a;
+    }
+    .engin_t1>p>span:nth-child(4){
+        font-size: .9em;
+        color: #1451c2;
+    }
+    .engin_t2 {
+        margin: 0 30px 30px 10px;
+    }
+    .engin_t2 p {
+        width: 85%;
+        font-size: .8em;
+        line-height: 20px;
+        background: #e1e1e1;
+        border-radius: 20px;
+        padding: 10px 30px;
+        box-shadow: 5px 6px 6px;
+        margin-left: 6%;
+    }
+    .engin_t2>p>span:nth-child(1){
+        font-size: 1em;
+        color: #5ca72a;
+    }
+    .engin_t2>p>span:nth-child(4){
+        font-size: 1em;
+        color: #1451c2;
+    }
+
+    /************************** enginesupplysystem  4-2 ***************************/
+    .emulsion_vi {
+        position: absolute;
+        top: 70px;
+        margin-left: 30%;
+    }
+    .emulsion_vi>p {
+        width: 120px;
+        height: 20px;
+        font-size: .7em;
+        font-weight: bold;
+        text-align: center;
+        background: #76ffff;
+        box-shadow: 2px 2px 2px;
+        border-radius: 20px;
+        padding-top: 3px;
+    }
+    .emulsionTech_t1 {
+        width: 50%;
+        position: absolute;
+        top: 14%;
+        margin-left: 3.8%;
+    }
+    .emulsionTech_t1 h1 {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #d3722d;
+    }
+    .emulsionTech_mt img {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .emulsionTech_list {
+        width: 83%;
+        border-top: 1px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
+    }
+    .emulsionTech_list a {
+        width: 76%;
+        font-size: .7em;
+        margin: 5px 0 5px 20px;
+        padding-left: 10px;
+        border-radius: 15%;
+        background: #92a7aa;
+        box-shadow: 2px 2px 2px;
+    }
+    .emulsionTech_list a:hover {
+        background: #e1e1e1;
+        box-shadow: none;
+    }
+    .emulsionTech_b1 img{
+        width: 60%;
+        margin: 0 13%;
+    }
+    .emulsionTech_b2>div {
+        width: 85%;
+        display: inherit;
+        margin: 0 auto;
+    }
+    .emulsionTech_b2>div img {
+        width: 80%;
+        margin: 10px;
+    }
+    .emulsionTech_b3>div {
+        width: 85%;
+        display: inherit;
+        margin: 0 auto;
+    }
+    .emulsionTech_b3>div img {
+        width: 80%;
+        margin: 10px;
+    }
+
+
+    .foot {
+        width: 100%;
+        height: 22vh;
+        background: rgba(13, 130, 78, 0.8);
+        margin-top: 0;
+    }
+    .foot p {
+        font-size: .8em;
+        text-align: center;
+        line-height: 15px;
+        padding: 3px;
+    }
+}

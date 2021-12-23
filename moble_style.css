@@ -1,0 +1,306 @@
+/*  일반적인 스마트폰의 가로모드 기본   594px */
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+/*
+    html, body {
+        width: 100%;
+        height: 100%;
+
+    }
+*/
+    header {
+        width: 100%;
+        height: 60px;
+    }
+    #logo img{
+        width: 180px;
+        height: 35px;
+        position: absolute;
+        top: 15px;
+        left: 20px;
+    }
+    .body{
+        width: 100%;
+        height: 0px;
+        position:relative;
+        overflow:hidden;  
+/*        top: 0;        */
+
+    }
+    .head{
+        width:100%;
+        height:60px;
+/*        border-bottom:1px solid #e1e1e1;*/
+        position: relative;
+    }
+    /**** 모바일 버기 버튼 메뉴 *****/
+   
+        #m_btn {
+        width: 25px;
+        height: 30px;
+/*        background: skyblue;*/
+        position: absolute;
+        top: 25px;
+        right: 10px;
+        z-index: 5;
+        padding-top: 10px;
+    }
+    #m_btn span, #m_btn::before, #m_btn::after {
+        content: "";
+        display: block;
+        background: #333;
+        width: 100%;
+        height: 3px;
+        margin-bottom: 5px;
+        transition: .3s;
+    }
+    #m_btn.on span {
+        opacity: 0;
+    }
+    #m_btn.on::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #m_btn.on::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+/*********************/
+    
+/*  menu */
+       .p_nav {
+        display: none;
+    }
+/*
+    nav {
+    background: #61d093;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    }
+*/
+    .m_nav {
+        display: block;
+    }
+   
+    .m_list>li {
+        position: relative;
+        top: 70px;
+        right: 55%;
+        line-height: 40px;
+    }
+    
+    .m_nav>ul>li>a {
+        font-size: 1em;
+        font-weight: inherit;
+        color: #fff;
+        text-align: right;
+    }
+
+/*
+    .m_nav>ul>li>a:hover {
+        color: #333;
+    }
+*/
+     .m_list {
+    background: #61d093;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    
+    }
+    .ul_list {
+        background: #fff;
+        position: fixed;
+        top: 0px;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        display: none;
+    }
+    .ul_list:active {
+        display: block;
+    }
+   
+    .ul_list li {
+        width: 150px;
+        position: relative;
+        top: 63px;
+        right: 0;
+/*      height: 20%;*/
+/*        position: relative;*/
+/*        background: #e1e1e1;*/
+        
+    }
+    .ul_list>li:active {
+        background: #e1e1e1;
+    }
+    .ul_list>li>a {
+        width: 200px;
+        margin: 10px 0;
+        font-size: .9em;
+        color: #333;
+        text-align: center;
+        line-height: 30px;
+
+    }
+  
+    section {
+/*        margin: 0 auto;*/
+/*        height: 100vh;*/
+    }
+    video {
+/*         display: block;*/
+/*        transform: scale(300%);*/
+        
+    }
+    .slider_tj1 {
+        display: block;
+        position: absolute;
+        top: 40%;
+        margin: 0 auto;
+    }
+    .slider_tj1 p {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+    .slider_tj2 {
+        display: block;
+        position: absolute;
+        top: 20%;
+    }
+    .slider_tj2 p {
+        font-size: 1em;
+    }
+    #main_slider2>div>img {
+        display: block;
+    }
+    div.full_img {
+        top: 34%;
+    }
+/*
+    .full_img div {
+        flex: 1;
+    }
+*/
+    .full_img div div {
+        display: block;
+        margin: 0 auto;
+    }
+    .full_img div img {
+        width: 150px;
+        height: 85px;
+        border-radius: 20px;
+    }
+
+    .m-1,.m-2,.m-3 {
+        font-size: .8em;
+        text-align: center;
+        color: #fff;
+        margin: 10px 0;
+    }
+    div.text {
+        width: 90%;
+        font-size: .7em;
+        color: #fff;
+    }
+    .welcom_t1 {
+        position: absolute;
+        top: 15%;
+        margin: 0 auto;
+    }
+    .welcom_t1 div {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .welcom_t1 h2 {
+        margin: 10px;
+    }
+    .welcom_t1>div>p:nth-child(2) {
+        font-size: 1.1em;
+        margin: 0 70px;
+    }
+    .welcom_t1>div>p:nth-child(3) {
+        width: 95%;
+        font-size: .7em;
+        line-height: 12px;
+        margin: 10px auto;
+    }
+        /*********** mission ************/
+    
+    .miss_text {
+        width: 100%;
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        margin: 0 auto;
+    }
+    
+    .miss_text>p:nth-child(1) {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 10px;
+    }
+    .miss_text>p:nth-child(2) {
+        width: 90%;
+        font-size: .9em;
+        font-weight: 200;
+        margin: 10px;
+    }
+    .miss_text>p:nth-child(3) {
+        width: 95%;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 10px;
+        text-align: center;
+    }
+    .miss_text>p:nth-child(4) {
+        width: 95%;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 10px;
+        text-align: center;
+    }
+    .miss_text>p>span {
+        color: #252bf5;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    div.mission_main_img {
+        display: flex;
+        position: absolute;
+        top: 50%;
+    }
+    
+    .mission_main_img div div {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    .mission_main_img div div p {
+        font-size: 1.1em;
+        text-align: center;
+    }
+    .mission_main_img div img{
+        width: 250px;
+        height: 170px;
+        border: 2px solid #333;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    
+    .foot {
+        width: 100%;
+        height: 150px;
+    }
+    .foot p {
+        font-size: .9em;
+        line-height: 30px;
+    }
+}
